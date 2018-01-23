@@ -163,15 +163,11 @@ public class RomanNumeralsTest {
         assertThat(roman).isEqualTo("XXIX");
     }
 
-
     @Test
-    public void returns46() {
-        String roman = mSut.translateToRoman(46);
-        assertThat(roman).isEqualTo("XXXXVI");
+    public void returns39() {
+        String roman = mSut.translateToRoman(39);
+        assertThat(roman).isEqualTo("XXXIX");
     }
-
-
-
 
 
 }
