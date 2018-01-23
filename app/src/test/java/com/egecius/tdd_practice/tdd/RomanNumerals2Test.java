@@ -51,18 +51,23 @@ public class RomanNumerals2Test {
         assertThat(result).isEqualTo("VI");
     }
 
-
     @Test
     public void returns7() {
         String result = mSut.translate(7);
         assertThat(result).isEqualTo("VII");
     }
 
-//    @Test
-//    public void returns9() {
-//        String result = mSut.translate(9);
-//        assertThat(result).isEqualTo("IX");
-//    }
+    @Test
+    public void returns9() {
+        String result = mSut.translate(9);
+        assertThat(result).isEqualTo("IX");
+    }
+
+    @Test
+    public void returns10() {
+        String result = mSut.translate(10);
+        assertThat(result).isEqualTo("X");
+    }
 
 
 }

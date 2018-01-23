@@ -7,6 +7,16 @@ public class RomanNumerals2 {
 
         StringBuilder stringBuilder = new StringBuilder();
 
+        if (remainder == 4) {
+            return "IV";
+        } else if (remainder == 9) {
+            return "IX";
+        }
+
+        if (remainder == 10) {
+            return "X";
+        }
+
         if (remainder > 5) {
             remainder = remainder - 5;
             stringBuilder.append("V");
@@ -14,10 +24,6 @@ public class RomanNumerals2 {
 
         if (remainder == 5) {
             return "V";
-        }
-
-        if (remainder == 4) {
-            return "IV";
         }
 
         for (int j = 0; j < remainder; j++) {
