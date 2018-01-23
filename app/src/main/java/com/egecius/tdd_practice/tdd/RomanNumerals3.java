@@ -1,13 +1,13 @@
 package com.egecius.tdd_practice.tdd;
 
-public class RomanNumerals {
+public class RomanNumerals3 {
 
-    String translateToRoman(int arabic) {
+    String translate(int arabic) {
+
         int remainder = arabic;
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        remainder = extract(remainder, stringBuilder, 90, "XC");
         remainder = extract(remainder, stringBuilder, 50, "L");
         remainder = extract(remainder, stringBuilder, 40, "XL");
         remainder = extract(remainder, stringBuilder, 10, "X");
@@ -19,12 +19,13 @@ public class RomanNumerals {
         return stringBuilder.toString();
     }
 
-    private int extract(int remainder, StringBuilder stringBuilder, int noToCatch, String roman) {
-        while (remainder >= noToCatch) {
-            stringBuilder.append(roman);
-            remainder = remainder - noToCatch;
+    private int extract(int remainder, StringBuilder stringBuilder, int arabicToExtract,
+            String romanToExtract) {
+
+        while (remainder >= arabicToExtract) {
+            remainder = remainder - arabicToExtract;
+            stringBuilder.append(romanToExtract);
         }
         return remainder;
     }
-
 }
