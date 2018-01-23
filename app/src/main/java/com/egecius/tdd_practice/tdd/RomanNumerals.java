@@ -2,7 +2,8 @@ package com.egecius.tdd_practice.tdd;
 
 public class RomanNumerals {
 
-    String translateToRoman(int remainder) {
+    String translateToRoman(int arabic) {
+        int remainder = arabic;
 
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -18,12 +19,12 @@ public class RomanNumerals {
         return stringBuilder.toString();
     }
 
-    private int catchAll(int no, StringBuilder stringBuilder, int noToCatch10, String roman) {
-        while (no >= noToCatch10) {
+    private int catchAll(int remainder, StringBuilder stringBuilder, int noToCatch, String roman) {
+        while (remainder >= noToCatch) {
             stringBuilder.append(roman);
-            no = no - noToCatch10;
+            remainder = remainder - noToCatch;
         }
-        return no;
+        return remainder;
     }
 
 }
