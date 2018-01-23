@@ -170,4 +170,48 @@ public class RomanNumeralsTest {
     }
 
 
+    @Test
+    public void returns40() {
+        String roman = mSut.translateToRoman(40);
+        assertThat(roman).isEqualTo("XL");
+    }
+
+    @Test
+    public void returns49() {
+        String roman = mSut.translateToRoman(49);
+        assertThat(roman).isEqualTo("XLIX");
+    }
+
+    @Test
+    public void returns50() {
+        String roman = mSut.translateToRoman(50);
+        assertThat(roman).isEqualTo("L");
+    }
+
+    @Test
+    public void returns54() {
+        String roman = mSut.translateToRoman(54);
+        assertThat(roman).isEqualTo("LIV");
+    }
+
+
+    @Test
+    public void returns59() {
+        String roman = mSut.translateToRoman(59);
+        assertThat(roman).isEqualTo("LIX");
+    }
+
+    @Test
+    public void returns88() {
+        String roman = mSut.translateToRoman(88);
+        assertThat(roman).isEqualTo("LXXXVIII");
+    }
+
+    @Test
+    public void returns99() {
+        String roman = mSut.translateToRoman(99);
+        assertThat(roman).isEqualTo("XCIX");
+    }
+
+
 }

@@ -6,6 +6,9 @@ public class RomanNumerals {
 
         StringBuilder stringBuilder = new StringBuilder();
 
+        remainder = catchAll(remainder, stringBuilder, 90, "XC");
+        remainder = catchAll(remainder, stringBuilder, 50, "L");
+        remainder = catchAll(remainder, stringBuilder, 40, "XL");
         remainder = catchAll(remainder, stringBuilder, 10, "X");
         remainder = catchAll(remainder, stringBuilder, 9, "IX");
         remainder = catchAll(remainder, stringBuilder, 5, "V");
