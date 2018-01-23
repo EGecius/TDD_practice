@@ -2,39 +2,41 @@ package com.egecius.tdd_practice.tdd;
 
 public class RomanNumerals {
 
-    String translateToRoman(int no) {
+    String translateToRoman(int remainder) {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        while (no >= 10) {
-            String roman = "X";
-            stringBuilder.append(roman);
-            no = no - 10;
+        remainder = catchAll(remainder, stringBuilder, 10, "X");
+
+        if (remainder == 9) {
+            String roman9 = "IX";
+            stringBuilder.append(roman9);
+            remainder = remainder - 9;
         }
 
-        if (no == 9) {
-            String roman = "IX";
-            stringBuilder.append(roman);
-            no = no - 9;
+        remainder = catchAll(remainder, stringBuilder, 5, "V");
+
+        String roman4 = "IV";
+        int noToCatch4 = 4;
+
+        if (remainder == noToCatch4) {
+            stringBuilder.append(roman4);
+            remainder = remainder - noToCatch4;
         }
 
-        if (no >= 5) {
-            String roman = "V";
-            stringBuilder.append(roman);
-            no = no - 5;
-        }
-
-        if (no == 4) {
-            String roman = "IV";
-            stringBuilder.append(roman);
-            no = no - 4;
-        }
-
-        for (int j = 0; j < no; j++) {
+        for (int j = 0; j < remainder; j++) {
             stringBuilder.append('I');
         }
 
         return stringBuilder.toString();
+    }
+
+    private int catchAll(int no, StringBuilder stringBuilder, int noToCatch10, String roman) {
+        while (no >= noToCatch10) {
+            stringBuilder.append(roman);
+            no = no - noToCatch10;
+        }
+        return no;
     }
 
 }
